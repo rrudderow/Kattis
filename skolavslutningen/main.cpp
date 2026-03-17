@@ -16,6 +16,11 @@ int main(){
         }
     }
 
+    for(int i=0;i<col;i++){
+        for(int j=0;j<row-1;j++){
+            if(matrix[j][i] == matrix[j])
+        }
+    }
 
     cout << count << endl;
 
