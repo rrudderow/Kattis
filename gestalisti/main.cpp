@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <algorithm>
 using namespace std;
 
 int main(){
@@ -15,7 +16,7 @@ int main(){
     for(int i=0;i<row;i++){
         cin >> temp >> temp1;
         if(temp == '+'){
-            names.pushback(temp1);
+            names.push_back(temp1);
         }else if(temp == '-'){
             auto itr = find(names.begin(), names.end(), temp1);
             if (itr != names.end())
@@ -23,15 +24,15 @@ int main(){
         }else if(temp == '?'){
             auto itr = find(names.begin(), names.end(), temp1);
             if (itr != names.end())
-                output.pushback("Jebb");
+                output.push_back("Jebb");
             else
-                output.pushback("Neibb");
+                output.push_back("Neibb");
 
         }else 
             return 1;
     }
     for(auto i : output)
-        cout >> i >> endl;
+        cout << i << endl;
 
     return 0;
 }
