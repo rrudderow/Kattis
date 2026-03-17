@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <unordered_set>
 #include <string>
-#include <algorithm>
 using namespace std;
 
 int main(){
@@ -10,20 +10,17 @@ int main(){
     cin >> row;
     char temp;
     string temp1;
-    vector<string> names;
+    unordered_set<string> names;
     vector<string> output;
 
     for(int i=0;i<row;i++){
         cin >> temp >> temp1;
         if(temp == '+'){
-            names.push_back(temp1);
+            names.insert(temp1);
         }else if(temp == '-'){
-            auto itr = find(names.begin(), names.end(), temp1);
-            if (itr != names.end())
-                names.erase(itr);
+            names.erase(temp1);
         }else if(temp == '?'){
-            auto itr = find(names.begin(), names.end(), temp1);
-            if (itr != names.end())
+            if (names.find(temp1) != names.end())
                 output.push_back("Jebb");
             else
                 output.push_back("Neibb");
